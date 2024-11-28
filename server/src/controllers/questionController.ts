@@ -5,6 +5,7 @@ import { IQuestion, Question} from '../models/Question.js';
 // gets a set of random questions
 export const getRandomQuestions = async (_req: Request, res: Response) => {
   try {
+    console.log("not sure I am getting to the questionsController page!!!")
     const questions = await Question.aggregate<IQuestion>([
       { $sample: { size: 10 } },
       { $project: { __v: 0 } }]);

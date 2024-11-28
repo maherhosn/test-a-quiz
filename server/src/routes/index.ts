@@ -1,7 +1,8 @@
 import express from 'express';
 const router = express.Router();
-import questionRoutes from './questionRoutes.js';
+import questionRoutes from './api/index.js';
 
-router.use('/questions', questionRoutes);
+console.log("I am in the routes index.ts page!!!")
+router.use('/api', questionRoutes);
 
 export default router;

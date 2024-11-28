@@ -2,7 +2,15 @@ import type { Question } from '../models/Question.js';
 
 export const getQuestions = async (): Promise<Question[]> => {
   try {
-    const response = await fetch('/api/questions/random');
+    console.log("this is where I am!!!")
+    const response = await fetch('/api/questions/random', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    }
+    );
+    console.log("did I get here" +JSON.stringify(response));
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
